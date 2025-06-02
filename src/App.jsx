@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
-// import Subscription from "./pages/Subscription";
 import Accounts from "./pages/Accounts";
 import Calendar from "./pages/Calendar";
 import Create from "./pages/CreatePost";
@@ -9,6 +8,7 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Settings from "./pages/Settings";
 import SignUp from "./pages/SignUp";
+import Subscription from "./pages/Subscription";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           <Route path="/dashboard/calendar" element={<Calendar />} />
           <Route path="/dashboard/create" element={<Create />} />
           <Route path="/dashboard/settings" element={<Settings />} />
-          {/* <Route path="/dashboard/subscription" element={<Subscription />} /> */}
+          <Route path="/dashboard/subscription" element={<Subscription />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
