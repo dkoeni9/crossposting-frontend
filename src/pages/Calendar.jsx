@@ -1,9 +1,8 @@
-// src/pages/CalendarPage.jsx
-
-import { Link } from "react-router-dom";
-import { DashboardLayout } from "../components/DashboardLayout";
-import { Button, Card } from "@radix-ui/themes";
+import { DashboardLayout } from "@/components/DashboardLayout";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { PlusCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function CalendarPage() {
   // Mock data for calendar
@@ -21,11 +20,10 @@ export default function CalendarPage() {
 
   return (
     <DashboardLayout>
-      {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Календарь</h1>
         <Button asChild className="rounded-full">
-          <Link to="/dashboard/create" className="flex items-center">
+          <Link to="/dashboard/create">
             <PlusCircle className="mr-2 h-4 w-4" />
             Запланировать пост
           </Link>
@@ -47,22 +45,16 @@ export default function CalendarPage() {
 
         <div className="grid grid-cols-7 gap-1 text-center mb-2">
           {["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"].map((day) => (
-            <div
-              key={day}
-              className="py-2 text-sm font-medium text-gray-500 border-b border-gray-200"
-            >
+            <div key={day} className="py-2 text-sm font-medium text-muted-foreground border-b border-border">
               {day}
             </div>
           ))}
         </div>
 
         <div className="grid grid-cols-7 gap-1">
-          {/* Пустые ячейки перед 1-м числом */}
+          {/* Empty cells for days before the 1st */}
           {Array.from({ length: 3 }).map((_, i) => (
-            <div
-              key={`empty-${i}`}
-              className="aspect-square p-1 border border-gray-300 rounded-md"
-            />
+            <div key={`empty-${i}`} className="aspect-square p-1 border border-border/30 rounded-md"></div>
           ))}
 
           {days.map((day) => {
@@ -71,13 +63,11 @@ export default function CalendarPage() {
             return (
               <div
                 key={day}
-                className={`aspect-square p-1 relative rounded-md border ${day === today ? "border-indigo-500" : "border-gray-300"
-                  } hover:border-gray-400 transition-colors`}
+                className={`aspect-square p-1 relative rounded-md border ${day === today ? "border-foreground" : "border-border"
+                  } hover:border-border/80 transition-colors`}
               >
                 <div className="h-full w-full flex flex-col p-1">
-                  <span className={`text-sm ${day === today ? "font-bold" : ""}`}>
-                    {day}
-                  </span>
+                  <span className={`text-sm ${day === today ? "font-bold" : ""}`}>{day}</span>
 
                   {hasPost && (
                     <div className="mt-auto">
@@ -85,13 +75,13 @@ export default function CalendarPage() {
                         {hasPost.platforms.map((platform, i) => (
                           <div
                             key={i}
-                            className="w-4 h-4 rounded-full bg-gray-200 flex items-center justify-center text-[10px]"
+                            className="w-4 h-4 rounded-full bg-muted flex items-center justify-center text-[10px]"
                           >
                             {platform}
                           </div>
                         ))}
                       </div>
-                      <div className="text-[10px] text-center mt-1 text-gray-500">
+                      <div className="text-[10px] text-center mt-1 text-muted-foreground">
                         {hasPost.count} пост{hasPost.count > 1 ? "а" : ""}
                       </div>
                     </div>
@@ -109,20 +99,17 @@ export default function CalendarPage() {
           <Card key={i} className="p-4 flex items-center justify-between">
             <div>
               <div className="font-medium">Пост #{i + 1}</div>
-              <div className="text-sm text-gray-500">Май {post.day}, 2025 • 10:00</div>
+              <div className="text-sm text-muted-foreground">Май {post.day}, 2025 • 10:00</div>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex space-x-1">
                 {post.platforms.map((platform, j) => (
-                  <div
-                    key={j}
-                    className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs"
-                  >
+                  <div key={j} className="w-6 h-6 rounded-full bg-muted flex items-center justify-center text-xs">
                     {platform}
                   </div>
                 ))}
               </div>
-              <Button variant="outline" size="small" className="rounded-full">
+              <Button variant="outline" size="sm" className="rounded-full">
                 Редактировать
               </Button>
             </div>
