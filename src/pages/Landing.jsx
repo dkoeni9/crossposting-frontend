@@ -222,7 +222,7 @@ export default function LandingPage() {
                   <p className="text-muted-foreground">Для опытных пользователей и команд</p>
                 </div>
                 <div className="mt-4 flex items-baseline text-3xl font-bold">
-                  1490 ₽<span className="ml-1 text-sm font-normal text-muted-foreground">/месяц</span>
+                  299 ₽<span className="ml-1 text-sm font-normal text-muted-foreground">/месяц</span>
                 </div>
                 <ul className="mt-6 space-y-3 text-sm">
                   <li className="flex items-center">
