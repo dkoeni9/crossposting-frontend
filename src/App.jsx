@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Settings from "./pages/Settings";
 import SignUp from "./pages/SignUp";
 import Subscription from "./pages/Subscription";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/dashboard/create" element={<Create />} />
           <Route path="/dashboard/settings" element={<Settings />} />
           <Route path="/dashboard/subscription" element={<Subscription />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
