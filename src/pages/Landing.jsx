@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Calendar, Clock, Lock, MessageSquare } from "lucide-react";
+import { Calendar, Check, Clock, Lock, MessageSquare } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -161,40 +161,14 @@ export default function LandingPage() {
                 </div>
                 <ul className="mt-6 space-y-3 text-sm">
                   <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4"
-                    >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
+                    <Check className="mr-2 h-4 w-4" />
                     Подключение до 3 аккаунтов
                   </li>
                   <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4"
-                    >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    10 запланированных постов в месяц
+                    <Check className="mr-2 h-4 w-4" />
+                    60 запланированных постов в месяц
                   </li>
-                  <li className="flex items-center">
+                  {/* <li className="flex items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -210,7 +184,7 @@ export default function LandingPage() {
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     Базовая аналитика
-                  </li>
+                  </li> */}
                 </ul>
                 <Button className="mt-8 rounded-full" variant="outline">
                   Начать
@@ -226,89 +200,24 @@ export default function LandingPage() {
                 </div>
                 <ul className="mt-6 space-y-3 text-sm">
                   <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4"
-                    >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
+                    <Check className="mr-2 h-4 w-4" />
                     Неограниченное количество аккаунтов
                   </li>
                   <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4"
-                    >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    Неограниченное количество запланированных постов
+                    <Check className="mr-2 h-4 w-4" />
+                    Неограниченное количество публикаций
                   </li>
                   <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4"
-                    >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    Расширенная аналитика
+                    <Check className="mr-2 h-4 w-4" />
+                    Аналитика
                   </li>
                   <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4"
-                    >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    Командное сотрудничество
+                    <Check className="mr-2 h-4 w-4" />
+                    Работа с комментариями
                   </li>
                   <li className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2 h-4 w-4"
-                    >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    Приоритетная поддержка
+                    <Check className="mr-2 h-4 w-4" />
+                    ИИ-ассистент
                   </li>
                 </ul>
                 <Button className="mt-8 rounded-full">Начать</Button>

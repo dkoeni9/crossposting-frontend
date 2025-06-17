@@ -23,8 +23,8 @@ export default function CreatePostPage() {
         </div>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-2 space-y-6">
+      <div className="grid gap-6">
+        <div className="space-y-6">
           <Card>
             <CardContent className="p-6">
               <div className="space-y-4">
@@ -81,40 +81,6 @@ export default function CreatePostPage() {
                     <Clock className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div>
-          <Card className="sticky top-20">
-            <CardContent className="p-6">
-              <h3 className="text-lg font-medium mb-4">Предпросмотр</h3>
-              <div className="rounded-lg border p-4 bg-muted/30">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-muted"></div>
-                  <div>
-                    <div className="font-medium text-sm">Имя пользователя</div>
-                    <div className="text-xs text-muted-foreground">Только что</div>
-                  </div>
-                </div>
-                <p className="text-sm mb-3">О чем вы хотите рассказать?</p>
-                <div className="aspect-video rounded-md bg-muted flex items-center justify-center text-muted-foreground text-sm">
-                  Предпросмотр изображения
-                </div>
-              </div>
-
-              <div className="mt-6 space-y-4">
-                <h4 className="text-sm font-medium">Будет опубликовано в:</h4>
-                <div className="flex flex-wrap gap-2">
-                  <div className="px-2 py-1 rounded-full bg-muted text-xs">ВКонтакте</div>
-                  <div className="px-2 py-1 rounded-full bg-muted text-xs">Telegram</div>
-                </div>
-
-                <h4 className="text-sm font-medium">Запланировано на:</h4>
-                <div className="text-sm">15 мая, 2025 в 10:00</div>
-
-                <Button className="w-full rounded-full mt-4">Запланировать пост</Button>
               </div>
             </CardContent>
           </Card>

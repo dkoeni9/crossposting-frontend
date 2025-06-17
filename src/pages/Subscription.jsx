@@ -29,11 +29,7 @@ export default function SubscriptionPage() {
               </li>
               <li className="flex items-center">
                 <Check className="mr-2 h-4 w-4" />
-                10 запланированных постов в месяц
-              </li>
-              <li className="flex items-center">
-                <Check className="mr-2 h-4 w-4" />
-                Базовая аналитика
+                60 запланированных постов в месяц
               </li>
             </ul>
           </CardContent>
@@ -61,19 +57,19 @@ export default function SubscriptionPage() {
               </li>
               <li className="flex items-center">
                 <Check className="mr-2 h-4 w-4" />
-                Неограниченное количество запланированных постов
+                Неограниченное количество публикаций
               </li>
               <li className="flex items-center">
                 <Check className="mr-2 h-4 w-4" />
-                Расширенная аналитика
+                Аналитика
               </li>
               <li className="flex items-center">
                 <Check className="mr-2 h-4 w-4" />
-                Командное сотрудничество
+                Работа с комментариями
               </li>
               <li className="flex items-center">
                 <Check className="mr-2 h-4 w-4" />
-                Приоритетная поддержка
+                ИИ-ассистент
               </li>
             </ul>
           </CardContent>

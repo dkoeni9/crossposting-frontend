@@ -17,7 +17,7 @@ export default function DashboardPage() {
         </Button>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {/* <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Всего постов</CardTitle>
@@ -58,14 +58,14 @@ export default function DashboardPage() {
             <p className="text-xs text-muted-foreground">Все подключены</p>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <h2 className="text-xl font-bold mt-8 mb-4">Подключенные аккаунты</h2>
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium">ВКонтакте</CardTitle>
-            <CardDescription>@username</CardDescription>
+            <CardDescription>@id147260703</CardDescription>
           </CardHeader>
           <CardFooter className="pt-2">
             <Button variant="outline" size="sm" className="w-full rounded-full">
@@ -77,7 +77,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium">Telegram</CardTitle>
-            <CardDescription>@username</CardDescription>
+            <CardDescription>@kyoni9d</CardDescription>
           </CardHeader>
           <CardFooter className="pt-2">
             <Button variant="outline" size="sm" className="w-full rounded-full">

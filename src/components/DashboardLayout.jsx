@@ -12,8 +12,8 @@ export function DashboardLayout({ children }) {
 
   const navigation = [
     { name: "Дашборд", href: "/dashboard", icon: Home },
-    { name: "Календарь", href: "/dashboard/calendar", icon: Calendar },
     { name: "Создать пост", href: "/dashboard/create", icon: PlusCircle },
+    { name: "Календарь", href: "/dashboard/calendar", icon: Calendar },
     { name: "Аккаунты", href: "/dashboard/accounts", icon: MessageSquare },
     { name: "Подписка", href: "/dashboard/subscription", icon: CreditCard },
     { name: "Настройки", href: "/dashboard/settings", icon: Settings },

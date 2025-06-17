@@ -6,8 +6,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 export default function AccountsPage() {
   const accounts = [
-    { platform: "ВКонтакте", username: "@username", connected: true },
-    { platform: "Telegram", username: "@username", connected: true },
+    { platform: "ВКонтакте", username: "@id147260703", connected: true },
+    { platform: "Telegram", username: "@kyoni9d", connected: true },
   ];
 
   return (
