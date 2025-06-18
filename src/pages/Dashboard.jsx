@@ -4,6 +4,30 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlusCircle, BarChart3, ArrowUpRight } from "lucide-react";
 
+const posts = [
+  {
+    id: 1,
+    title: "Первая публикация",
+    date: "Опубликован 1 день назад • 3 платформы",
+    content: "Сегодня мы запустили новую функцию планирования публикаций сразу в несколько соцсетей.",
+    platforms: ["В", "Т"],
+  },
+  {
+    id: 2,
+    title: "SMM-лайфхак",
+    date: "Опубликован 2 дня назад • 2 платформы",
+    content: "Совет недели: используйте отложенный постинг для охвата вечерней аудитории.",
+    platforms: ["В"],
+  },
+  {
+    id: 3,
+    title: "Промо-акция",
+    date: "Опубликован 5 дней назад • 1 платформа",
+    content: "Запустили промо: всем новым пользователям — бесплатная неделя Pro-тарифа!",
+    platforms: ["В", "Т"],
+  },
+];
+
 export default function DashboardPage() {
   return (
     <DashboardLayout>
@@ -90,24 +114,23 @@ export default function DashboardPage() {
 
       <h2 className="text-xl font-bold mt-8 mb-4">Недавние посты</h2>
       <div className="grid gap-4">
-        {[1, 2, 3].map((i) => (
-          <Card key={i}>
+        {posts.map((post) => (
+          <Card key={post.id}>
             <CardHeader className="pb-2">
               <div className="flex justify-between items-center">
-                <CardTitle className="text-sm font-medium">Пост #{i}</CardTitle>
+                <CardTitle className="text-sm font-medium">{post.title}</CardTitle>
                 <div className="text-xs px-2 py-1 rounded-full bg-muted">Опубликован</div>
               </div>
-              <CardDescription>Опубликован 2 дня назад • 2 платформы</CardDescription>
+              <CardDescription>{post.date}</CardDescription>
             </CardHeader>
             <CardContent className="pb-2">
-              <p className="text-sm">
-                Это пример содержания поста, который будет опубликован на нескольких платформах...
-              </p>
+              <p className="text-sm">{post.content}</p>
             </CardContent>
             <CardFooter className="pt-2 flex justify-between">
               <div className="flex space-x-1">
-                <div className="w-6 h-6 rounded-full bg-muted flex items-center justify-center text-xs">В</div>
-                <div className="w-6 h-6 rounded-full bg-muted flex items-center justify-center text-xs">Т</div>
+                {post.platforms.map((p, idx) => (
+                  <div key={idx} className="w-6 h-6 rounded-full bg-muted flex items-center justify-center text-xs">{p}</div>
+                ))}
               </div>
               <Button variant="ghost" size="sm" className="rounded-full">
                 Подробнее

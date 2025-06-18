@@ -31,7 +31,7 @@ export default function CalendarPage() {
       </div>
 
       <Card className="p-4">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-4">
           <Button variant="outline" size="icon" className="rounded-full">
             <ChevronLeft className="h-4 w-4" />
             <span className="sr-only">Предыдущий месяц</span>
@@ -43,9 +43,9 @@ export default function CalendarPage() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-7 gap-1 text-center mb-2">
+        <div className="grid grid-cols-7 gap-1 text-center mb-1">
           {["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"].map((day) => (
-            <div key={day} className="py-2 text-sm font-medium text-muted-foreground border-b border-border">
+            <div key={day} className="py-1 text-sm font-medium text-muted-foreground border-b border-border">
               {day}
             </div>
           ))}
@@ -54,7 +54,7 @@ export default function CalendarPage() {
         <div className="grid grid-cols-7 gap-1">
           {/* Empty cells for days before the 1st */}
           {Array.from({ length: 3 }).map((_, i) => (
-            <div key={`empty-${i}`} className="aspect-square p-1 border border-border/30 rounded-md"></div>
+            <div key={`empty-${i}`} className="h-16 p-1 border border-border/30 rounded-md"></div>
           ))}
 
           {days.map((day) => {
@@ -63,7 +63,7 @@ export default function CalendarPage() {
             return (
               <div
                 key={day}
-                className={`aspect-square p-1 relative rounded-md border ${day === today ? "border-foreground" : "border-border"
+                className={`h-16 p-1 relative rounded-md border ${day === today ? "border-foreground" : "border-border"
                   } hover:border-border/80 transition-colors`}
               >
                 <div className="h-full w-full flex flex-col p-1">
@@ -71,19 +71,17 @@ export default function CalendarPage() {
 
                   {hasPost && (
                     <div className="mt-auto">
-                      <div className="flex flex-wrap gap-0.5 mt-1 justify-center">
+                      <div className="flex flex-wrap gap-0.5 justify-center">
                         {hasPost.platforms.map((platform, i) => (
                           <div
                             key={i}
-                            className="w-4 h-4 rounded-full bg-muted flex items-center justify-center text-[10px]"
+                            className="w-3 h-3 rounded-full bg-muted flex items-center justify-center text-[8px]"
                           >
                             {platform}
                           </div>
                         ))}
                       </div>
-                      <div className="text-[10px] text-center mt-1 text-muted-foreground">
-                        {hasPost.count} пост{hasPost.count > 1 ? "а" : ""}
-                      </div>
+                      <div className="text-[8px] text-center mt-0.5 text-muted-foreground">{hasPost.count}</div>
                     </div>
                   )}
                 </div>
@@ -94,22 +92,28 @@ export default function CalendarPage() {
       </Card>
 
       <h2 className="text-xl font-bold mt-8 mb-4">Предстоящие посты</h2>
-      <div className="grid gap-4">
-        {scheduledPosts.slice(0, 3).map((post, i) => (
-          <Card key={i} className="p-4 flex items-center justify-between">
-            <div>
-              <div className="font-medium">Пост #{i + 1}</div>
-              <div className="text-sm text-muted-foreground">Май {post.day}, 2025 • 10:00</div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {scheduledPosts.slice(0, 8).map((post, i) => (
+          <Card key={i} className="aspect-square p-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div className="flex-1">
+              <div className="font-medium text-lg mb-2">Пост #{i + 1}</div>
+              <div className="text-sm text-muted-foreground mb-3">Май {post.day}, 2025</div>
+              <div className="text-sm text-muted-foreground">10:00</div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="flex space-x-1">
+
+            <div className="space-y-3">
+              <div className="flex justify-center space-x-1">
                 {post.platforms.map((platform, j) => (
-                  <div key={j} className="w-6 h-6 rounded-full bg-muted flex items-center justify-center text-xs">
+                  <div
+                    key={j}
+                    className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-sm font-medium"
+                  >
                     {platform}
                   </div>
                 ))}
               </div>
-              <Button variant="outline" size="sm" className="rounded-full">
+
+              <Button variant="outline" size="sm" className="w-full rounded-full">
                 Редактировать
               </Button>
             </div>
